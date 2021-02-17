@@ -1,0 +1,28 @@
+<div  class="container">
+    <h2>Lista de Usuarios</h2>
+    <p>listado de Usuarios del sistema: {{title}} </p>            
+    <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+            <th scope="col">clave</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <tr *ngFor="let usuario of usuarios">
+              <td>{{usuario.usuarioId}}</td>
+              <td>{{usuario.nombre}}</td>
+              <td>{{usuario.apellido}}</td>
+              <td>{{usuario.contrasenia}}</td>
+              <div>
+              <td> <button type="button" class="btn btn-warning">Editar</button></td>
+              <td><button type="button" class="btn btn-danger" > Eliminar</button></td></div>
+            </tr>
+    
+      </tbody>
+      
+    </table>
+  </div>

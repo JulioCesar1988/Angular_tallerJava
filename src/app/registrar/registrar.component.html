@@ -1,0 +1,44 @@
+
+<h2>Alta de Usuario </h2>
+<p>Componenete para realizar la alta de usuarios en el sistema </p>     
+<div class="container">
+    <form #usuario="ngForm" (ngSubmit)="register(usuario.value)" method="POST">
+        <div class="form-group" >
+            <label for="exampleInputPassword1">Nombre</label>
+            <input type = "text" class="form-control" name = "nombre" placeholder = "nombre" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Apellido</label>
+            <input type = "text" class="form-control" name = "apellido" placeholder = "apellido" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type = "number" class="form-control" name = "dni" placeholder = "dni" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type = "email"  class="form-control" name = "email" placeholder = "email" ngModel>
+          
+          <small id="emailHelp" class="form-text text-muted">debe ser un email no existente en el sistema.</small>
+        </div>
+        <div class="form-group">
+            <label for="telefino">Telefono</label>
+            <input type = "number" class="form-control" name = "telefono" placeholder = "telefono" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="contrasenia">Contrasenia</label>
+          <input type = "password" class="form-control" name = "contrasenia" placeholder = "contrasenia" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="tipoUsuario">Seleccione su Perfil</label>
+            <select name="tipoUsuario" class="form-control"  ngModel>
+                <option [value]="item" *ngFor="let item of lista_perfiles">{{item}}</option>
+                </select>
+          </div>
+        <button type="submit"  class="btn btn-primary">Agregar</button>
+      </form>
+    
+     </div>
+    
+
+    
