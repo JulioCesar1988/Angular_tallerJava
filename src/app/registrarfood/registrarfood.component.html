@@ -1,0 +1,85 @@
+
+<h2>Alta de FoodTruck </h2>
+<p>Componente para alta de foodtruck </p>     
+<div class="container">
+    <form #foodtruck="ngForm" (ngSubmit)="register(foodtruck.value)" method="POST">
+        <div class="form-group" >
+            <label for="exampleInputPassword1">Nombre</label>
+            <input type = "text" class="form-control" name = "nombre" placeholder = "nombre" ngModel>
+        </div>
+        
+        <div class="form-group">
+            <label for="descripcion">descripcion</label>
+            <input type = "text" class="form-control" name = "descripcion" placeholder = "descripcion" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="url">url</label>
+            <input type = "text" class="form-control" name = "url" placeholder = "url" ngModel>
+        </div>
+
+
+        <div class="form-group">
+            <label for="twitter">twitter</label>
+            <input type = "text" class="form-control" name = "twitter" placeholder = "twitter" ngModel>
+        </div>
+
+  
+        <div class="form-group">
+            <label for="instagram">instagram</label>
+            <input type = "text" class="form-control" name = "instagram" placeholder = "instagram" ngModel>
+        </div>
+
+
+        <div class="form-group">
+            <label for="whatsapp">whatsapp</label>
+            <input type = "text" class="form-control" name = "whatsapp" placeholder = "whatsapp" ngModel>
+        </div>
+
+
+<!--
+        <div class="form-group">
+            <label for="tipoUsuario">Servicios</label>
+            <select name="servicios" class="form-control"  ngModel>
+                <option [value]="item" *ngFor="let item of lista_servicios">{{item}}</option>
+                </select>
+          </div> -->
+          <p>
+            <select name="servicios" [(ngModel)]="servicios" multiple="multiple">
+            <option [value]="item" *ngFor="let item of lista_servicios">{{item}}</option>
+            </select>
+            </p>
+            <ul>
+              <li *ngFor="let item of servicios">
+                {{item}}
+              </li>
+            </ul>
+
+
+       <!--
+        <div class="form-group">
+            <label for="zonas">zonas</label>
+            <select name="zonas" class="form-control"  ngModel>
+                <option [value]="item" *ngFor="let item of lista_zonas">{{item}}</option>
+                </select>
+          </div>
+-->
+
+
+<p>
+    <select name="zonas" [(ngModel)]="zonas" multiple="multiple">
+    <option [value]="item" *ngFor="let item of lista_zonas">{{item}}</option>
+    </select>
+    </p>
+    <ul>
+      <li *ngFor="let item of zonas">
+        {{item}}
+      </li>
+    </ul>
+
+        <button type="submit"  class="btn btn-primary">Agregar</button>
+      </form>
+    
+     </div>
+    
+
+    

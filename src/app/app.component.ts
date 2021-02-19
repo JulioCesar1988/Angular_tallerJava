@@ -1,37 +1,19 @@
-/*import { Component } from '@angular/core';
-import { UsuarioService } from './services/usuario.service';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
-export class AppComponent {
-  title = 'TallerJava';
-  public usuarios: Array<any> = [];
-
-  constructor(
-    private usuarioService: UsuarioService
-  ){
-   
-    this.usuarioService.getUsuarios().subscribe(
-    (resp: any) => {this.usuarios = resp})
-  }
-}**/
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from './services/authentication.service';
 import { UsuarioService } from './services/usuario.service';
+
 import { User } from './models/User';
 import { Usuario } from './usuarios/usuario.model';
+import { Foodtruck } from './models/foodtruck';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
     currentUser!: User;
     public usuarios: Array<any> = [];
-
+    public foodtrucks: Array<any> = [];
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService
@@ -53,7 +35,9 @@ export class AppComponent {
       // para el armado de la lista de usuarios 
     usuarioService.getUsuarios().subscribe(
       (resp: any) => {this.usuarios = resp})    
-     }
+     
+    
+    }
 
      eventos_index(){
       console.log('listado de eventos');
@@ -75,15 +59,12 @@ export class AppComponent {
     }
 
 
-    
 
-
-  
-     foodtrucks_index(){
-      console.log('listado de foodtruck');
-      this.router.navigate(['/foodtrucks']);
-    
-    }
      
+
+    
+    login() {
+      this.router.navigate(['/login']);
+  }
 
   }

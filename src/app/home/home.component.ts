@@ -11,6 +11,8 @@ export class HomeComponent {
     error: string = '';
     loading: boolean = false;
 
+    usuario: string= 'julio';
+
     constructor(private carteleraService: CarteleraService) { }
 
     ngOnInit() {
@@ -21,6 +23,7 @@ export class HomeComponent {
                 data => {
                     this.loading = false;
                     this.carteleras = data;
+                    
                 },
                 error => {
                     this.error = 'No se pudieron cargar las carteleras';

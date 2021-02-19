@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { Usuario } from './usuario.model';
 import { UsuarioService } from '../services/usuario.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -16,7 +17,8 @@ export class UsuariosComponent implements OnInit {
   public usuarios: Array<any> = [];
 
   constructor(
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService ,
+    private router: Router
   ){
    
     this.usuarioService.getUsuarios().subscribe(
@@ -27,6 +29,20 @@ export class UsuariosComponent implements OnInit {
   
     }
 
+
+    Delete(usuario:Usuario){
+      this.usuarioService.deleteUsuario(usuario)
+      .subscribe(data=>{
+        this.usuarios=this.usuarios.filter(p=>p!==usuario);
+        alert("Usuario eliminado...");
+      })
+    }
+
+    Editar(usuario:Usuario):void{
+      localStorage.setItem("id",usuario.usuarioId.toString());
+      console.log("aaaaaaah me quiere actualizar");
+      this.router.navigate(["edictusuario"]);
+    }
 
 
 }

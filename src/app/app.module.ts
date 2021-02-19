@@ -17,6 +17,10 @@ import { LoginComponent } from './login/login.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { EdictusuarioComponent } from './edictusuario/edictusuario.component';
+import { RegistrarfoodComponent } from './registrarfood/registrarfood.component';
+import { FoodtrucksComponent } from './foodtrucks/foodtrucks.component';
+import { EditfoodtruckComponent } from './editfoodtruck/editfoodtruck.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { RegistrarComponent } from './registrar/registrar.component';
     LoginComponent,
     FooterComponent,
     UsuariosComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    EdictusuarioComponent,
+    RegistrarfoodComponent,
+    FoodtrucksComponent,
+    EditfoodtruckComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +47,6 @@ import { RegistrarComponent } from './registrar/registrar.component';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent,LoginComponent,HomeComponent,RegistrarComponent]
+  bootstrap: [AppComponent,LoginComponent,HomeComponent,RegistrarComponent,EdictusuarioComponent,RegistrarfoodComponent,FoodtrucksComponent,EditfoodtruckComponent]
 })
 export class AppModule { }

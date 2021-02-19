@@ -19,5 +19,10 @@ export class Usuario {
   this.tipoUsuario = tipoUsuario;
   }
 
+ setId(id : number){
+  this.usuarioId = id;
+ }
+
+
 
  }

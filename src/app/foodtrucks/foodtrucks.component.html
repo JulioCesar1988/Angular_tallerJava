@@ -1,0 +1,31 @@
+
+<div class="container">
+    <h2>Lista de Foodtrucks</h2>
+    <p>listado de Foodtrucks del sistema: {{title}} </p>            
+        <table class="table table-hover">
+          <thead>
+            <tr class="text-center">
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">descripcion</th>
+            <th scope="col">url</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let foodtruck of foodtrucks" class="text-center">
+              <td>{{foodtruck.foodTruckId}}</td>
+              <td>{{foodtruck.nombre}}</td>
+              <td>{{foodtruck.descripcion}}</td>
+              <td>{{foodtruck.url}}</td>
+          
+              <td>
+              <div>
+                <td><button (click)="Editar(foodtruck)" class="btn btn-warning">Editar</button></td>
+                <td><button (click)="Delete(foodtruck)" class="btn btn-danger" style="margin-left: 10px;">Delete</button></td>
+              </div>
+              </td>
+            </tr>
+          </tbody>
+        
+    </table>
+  </div>

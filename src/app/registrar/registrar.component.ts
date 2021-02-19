@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../usuarios/usuario.model';
 import { UsuarioService } from '../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar',
@@ -15,7 +16,7 @@ export class RegistrarComponent implements OnInit {
 
 lista_perfiles:string[]=["FOD","ORG"];
 
- constructor(  public usuarioService: UsuarioService) {
+ constructor( public router: Router , public usuarioService: UsuarioService) {
 
 
  }
@@ -25,6 +26,8 @@ lista_perfiles:string[]=["FOD","ORG"];
     console.log(usuario);
     this.usuarioService.register(usuario).subscribe(data => {
       console.log(data);
+
+      this.router.navigate(["login"]);
 
 
     });
